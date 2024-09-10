@@ -1,0 +1,39 @@
+NPM is known as package manager and it does not have any full form like 'node package manager'.
+
+Our React project is based on several external packages which are located in Node Modules are manages by 'NPM'.
+
+'Bundlers' ignites our app, they bind all the files and make our app production ready. There are many type of bundlers like webpack, vite, parscal. We are using parscal.
+
+There are 2 type of dependencies 
+    1. Normal dependencies (npm install ....)
+    2. Dev dependencies (npm install -D ....) (used for development of app)
+
+'package.json' keeps the track of what version of packages are installed and can be edited.
+'package-lock.json' keeps the trach the dependencies are installed correctly in all environments and it can not be edited. 
+
+'Node_modules' is like a database that contain all the data of dependencies. 
+
+If we have 'package.json' and 'package-lock.json' we can re create all our 'node_modules'.
+
+'NPM' is used for installing a package, while 'NPX' is used for executing a package.
+
+# Parcel:
+    - Dev build
+    - Local Server
+    - HMR = Hot Module Replacement
+    - File Watching Algorithm - written in C++
+    - Caching - Faster Builds
+    - Image Optimization 
+    - Minification
+    - Bundling
+    - Compress
+    - Code splitting
+    - Consistent Hashing
+    - Differential Bundling - support older browsers
+    - Diagnostic
+    - Error Handling
+    - HTTPS 
+    - Tree Shaking  - remove unnecessary files
+    
+
+
