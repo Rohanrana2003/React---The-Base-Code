@@ -2,7 +2,7 @@ NPM is known as package manager and it does not have any full form like 'node pa
 
 Our React project is based on several external packages which are located in Node Modules are manages by 'NPM'.
 
-'Bundlers' ignites our app, they bind all the files and make our app production ready. There are many type of bundlers like webpack, vite, parscal. We are using parscal.
+'BUNDLERS' ignites our app, they bind all the files and make our app production ready. There are many type of bundlers like webpack, vite, parscal. We are using parscal.
 
 There are 2 type of dependencies 
     1. Normal dependencies (npm install ....)
@@ -17,7 +17,7 @@ If we have 'package.json' and 'package-lock.json' we can re create all our 'node
 
 'NPM' is used for installing a package, while 'NPX' is used for executing a package.
 
-# Parcel:
+# PARCEL:
     - Dev build
     - Local Server
     - HMR = Hot Module Replacement
@@ -35,5 +35,17 @@ If we have 'package.json' and 'package-lock.json' we can re create all our 'node
     - HTTPS 
     - Tree Shaking  - remove unnecessary files
     
+React.createElelemnt creates a object , When the object is rendered to DOM it becomes a html createElelemnt
+ [React.createElelemnt => Object => HTML Element]
 
+ JSX not means HTML into JavaScript OR JavaScript into HTML. JSX have HTML or XML like syntax.
 
+'BABEL' takes the code and convert it into the code in which JavaScript Browsers understands.
+
+BABEL coverts all the JSX code into React.createElelemnt creates a object , When the object is rendered to DOM it becomes a html createElelemnt
+ [JSX code => React.createElelemnt => Object => HTML Element]
+
+ Elements in React are plain JSX Code.
+ Components in React are used to return the Element inside our React Code. 
+
+ 

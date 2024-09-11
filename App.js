@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+//Element
+const reactElement = <h1>This is an React Element</h1>
 
-const parent = React.createElement('div', {id:'parent'}, [
-    React.createElement('div', {id:'child', key:"1"}, [
-        React.createElement('h1', {key:"2"}, ['I am H1']),
-        React.createElement('h2', {key:"3"}, ['I am H2'])
-    ]),
-    React.createElement('div', {id:'child2', key:"4"}, [
-        React.createElement('h3', {key:"5"}, ['I am H3']),
-        React.createElement('h4', {key:"6"}, ['I am H4'])
-    ])
-]);
+//Component
+const ReactComponent = () => {
+   return <h1>This is an React Component</h1>
+}
 
-let root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(parent);
+//For Rendering Element
+ReactDOM.createRoot(document.getElementById('root'))
+.render(reactElement);
+
+
+//For Rendering Component
+// ReactDOM.createRoot(document.getElementById('root'))
+// .render(<ReactComponent/>);
