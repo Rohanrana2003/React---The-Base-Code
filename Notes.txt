@@ -48,4 +48,8 @@ BABEL coverts all the JSX code into React.createElelemnt creates a object , When
  Elements in React are plain JSX Code.
  Components in React are used to return the Element inside our React Code. 
 
- 
+ Component composition is to merge a component into another component.
+
+ JSX sanitizes our data coming from an external source like ans external API and prevent our code from crosss site scripting attacks.
+
+ Props are just argument to a function(React component).
