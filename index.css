@@ -50,21 +50,31 @@
 .res-card{
     margin: 5px;
     padding: 10px;
-    width: 200px;
-    height: 300px;
+    width: 250px;
+    height: 370px;
     background-color: #f0f0f0 ;
     border: 1px solid transparent;
+    border-radius: 10px;
 }
 .res-card:hover{
-    border: 1px solid black;
-
+    box-shadow: 5px 5px 5px 4px rgb(0.1, 0,1, 0.1);
+    transform: scale(1.006);
+    cursor: pointer;
 }
 
 .res-card >*{
     padding: 7px 0;
 }
+.res-card img{
+    height: 150px;
+    object-fit: cover;
+}
 
 .res-logo{
     width: 100%;
+    border-radius: 15px;
+}
 
+.card-info >*{
+    padding: 5px 10px;
 }
