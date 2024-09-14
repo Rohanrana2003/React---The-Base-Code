@@ -20,22 +20,22 @@ If we have 'package.json' and 'package-lock.json' we can re create all our 'node
 'NPM' is used for installing a package, while 'NPX' is used for executing a package.
 
 # PARCEL:
-    - Dev build
-    - Local Server
-    - HMR = Hot Module Replacement
-    - File Watching Algorithm - written in C++
-    - Caching - Faster Builds
-    - Image Optimization 
-    - Minification
-    - Bundling
-    - Compress
-    - Code splitting
-    - Consistent Hashing
-    - Differential Bundling - support older browsers
-    - Diagnostic
-    - Error Handling
-    - HTTPS 
-    - Tree Shaking  - remove unnecessary files
+- Dev build
+- Local Server
+- HMR = Hot Module Replacement
+- File Watching Algorithm - written in C++
+- Caching - Faster Builds
+- Image Optimization 
+- Minification
+- Bundling
+- Compress
+- Code splitting
+- Consistent Hashing
+- Differential Bundling - support older browsers
+- Diagnostic
+- Error Handling
+- HTTPS 
+- Tree Shaking  - remove unnecessary files
     
 React.createElelemnt creates a object , When the object is rendered to DOM it becomes a html createElelemnt
  [React.createElelemnt => Object => HTML Element]
@@ -55,3 +55,18 @@ BABEL coverts all the JSX code into React.createElelemnt creates a object , When
  JSX sanitizes our data coming from an external source like ans external API and prevent our code from crosss site scripting attacks.
 
  Props are just argument to a function(React component).
+
+ There are two type of Export/Import:
+
+ - Default export/import: (Cannot export more than 1 component or element from a file)
+   - export default <Component>;
+   - import <Component> from "<pathName>"
+
+ - Named export/import: (Used when we have to export more than 2 component or element from a file)
+   - export const <Component>;
+   - import {<Component>} from "<pathName>"
+
+# React Hooks
+ (Normal JavaScript utility Function)
+ - UseState()  "Gives us a variable with super powers"
+ - UseEffect() "Runs after UI is rendered"
