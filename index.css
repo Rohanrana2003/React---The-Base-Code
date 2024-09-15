@@ -7,8 +7,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
+    border-bottom: 2px solid rgb(196, 52, 0);
     margin: 10px;
+    height: 120px;
 }
 .body{
     width: 100%;     
@@ -16,8 +17,8 @@
 
 
 .logo{
-    width: 150px;
-    padding: 0 30px;
+    width: 130px;
+    padding: 0 40px;
 }
 .nav-items{
     margin-right: 30px;
@@ -95,4 +96,46 @@
 }
 .filter-btn:active{
     transform: scale(0.97);
+}
+
+.shimmer-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 20px;
+
+}
+
+.shimmer-card{
+    margin: 5px;
+    padding: 10px;
+    width: 250px;
+    height: 370px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+.shimmer-btn{
+    border: 0;
+    outline: 0;
+    width: 215px;
+    margin: 20px;
+    margin-bottom: 0;
+    background-color: #f0f0f0;
+    padding: 20px 50px;
+    border-radius: 20px;
+}
+
+.shimmer-card >*{
+    padding: 10px 0;
+}
+.shimmer-img{
+    height: 150px;
+    width: 245px;
+    border-radius: 10px;
+    background-color: #d8d8d8;
+    margin: 8px 2px;
+
 }
