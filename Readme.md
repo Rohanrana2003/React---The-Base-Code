@@ -44,7 +44,7 @@ React.createElelemnt creates a object , When the object is rendered to DOM it be
 
 'BABEL' takes the code and convert it into the code in which JavaScript Browsers understands.
 
-BABEL coverts all the JSX code into React.createElelemnt creates a object , When the object is rendered to DOM it becomes a html createElelemnt
+ BABEL coverts all the JSX code into React.createElelemnt creates a object , When the object is rendered to DOM it becomes a html createElelemnt
  [JSX code => React.createElelemnt => Object => HTML Element]
 
  Elements in React are plain JSX Code.
@@ -70,3 +70,5 @@ BABEL coverts all the JSX code into React.createElelemnt creates a object , When
  (Normal JavaScript utility Function)
  - UseState()  "Gives us a variable with super powers"
  - UseEffect() "Runs after UI is rendered"
+
+ Whenever State variable updates, react triggers a reconciliation cycle(re-renders the component)
