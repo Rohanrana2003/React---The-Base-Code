@@ -1,7 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
-import { DATA_URL } from "../utils/constants";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 
 const Body = () => {
@@ -11,31 +11,33 @@ const Body = () => {
     const [login, setLogin] = useState('Login');
     const [searchValue, setSearchValue] = useState('');
 
+ 
+
+   const fetchData = async() =>{
+    const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.7333148&lng=76.7794179&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING')
+    const json = await data.json();
+    setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setListOfRestaurantsClone(json?.data?.cards[4   ]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+   }
+
    useEffect(()=>{
     fetchData();
    }, [])
-
-   const fetchData = async() =>{
-    const data = await fetch(DATA_URL)
-    const json = await data.json();
-    setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setListOfRestaurantsClone(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-   }
+   
 
    const filterRestaurants = () =>{
 
         if(filterValue === 'Top Rated Restaurants'){
             setFilterValue('See all Restaurants');
-            setListOfRestaurantsClone(listOfRestaurants.filter(rest=>rest.info.avgRating > 4.1));
+            setListOfRestaurantsClone(listOfRestaurants?.filter(rest=>rest.info.avgRating > 4.1));
         }
         else{
             setFilterValue('Top Rated Restaurants');
             setListOfRestaurantsClone(listOfRestaurants);
         }
-
    }
 
-   return listOfRestaurants.length == 0 ? <Shimmer/> : (
+   return listOfRestaurants && listOfRestaurants?.length == 0 ? <Shimmer/> : (
 
         <div className="body">
 
@@ -59,8 +61,8 @@ const Body = () => {
 
             <div className="rest-container">
                 {
-                    listOfRestaurantsClone.map((restaurant)=>(
-                        <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+                    listOfRestaurants && listOfRestaurantsClone?.map((restaurant)=>(
+                        <Link key={restaurant.info.id} to={'/restaurant/' + restaurant.info.id}><RestaurantCard resData={restaurant} /></Link> 
                     ))
                 }
             </div>

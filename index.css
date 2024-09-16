@@ -37,7 +37,17 @@
 .nav-items > ul > li{
     padding: 10px;
     margin: 10px;
+    cursor: pointer;
+    color: black;
 }
+.nav-items a{
+    text-decoration: none;
+}
+.nav-items a:hover{
+    color: black;
+    text-decoration: underline;
+}
+
 
 .search{
     padding: 10px;
