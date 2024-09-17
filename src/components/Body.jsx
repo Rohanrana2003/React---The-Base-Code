@@ -30,7 +30,7 @@ const Body = () => {
 
         if(filterValue === 'Top Rated Restaurants'){
             setFilterValue('See all Restaurants');
-            setListOfRestaurantsClone(listOfRestaurants?.filter(rest=>rest.info.avgRating > 4.1));
+            setListOfRestaurantsClone(listOfRestaurants?.filter(rest=>rest.info.avgRating > 4.3));
         }
         else{
             setFilterValue('Top Rated Restaurants');

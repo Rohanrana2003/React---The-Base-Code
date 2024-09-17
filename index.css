@@ -6,23 +6,38 @@
 ::-webkit-scrollbar {
     display: none;
 }
-
+a{
+    text-decoration: none;
+}
 .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid rgb(196, 52, 0);
     margin: 0px 20px;
-    height: 120px;
+    height: 110px;
 }
+
 .body{
     width: 100%;     
 }
 
+.logo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.logoImg{
+    width: 70px;
+    padding-left: 30px;
+}
 .logo{
-    width: 130px;
-    padding: 0 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    font-weight: 900;
+    font-size: 40px;
+    color: rgb(196, 52, 0);
 }
 .nav-items{
     margin-right: 30px;
@@ -42,57 +57,14 @@
 }
 .nav-items a{
     text-decoration: none;
+    color: black;
 }
 .nav-items a:hover{
-    color: black;
-    text-decoration: underline;
+    color: rgb(196, 52, 0);
 }
-
 
 .search{
     padding: 10px;
-}
-
-.rest-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 40px 0;
-    gap: 20px;
-}
-
-.res-card{
-    margin: 5px;
-    padding: 10px;
-    width: 250px;
-    height: 365px;
-    background-color: #f0f0f0 ;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    transition: all 0.1s;
-}
-.res-card:hover{
-    box-shadow: 5px 5px 5px 4px rgb(0.1, 0,1, 0.1);
-    transform: scale(1.006);
-    cursor: pointer;
-}
-
-.res-card >*{
-    padding: 7px 0;
-}
-.res-card img{
-    height: 150px;
-    object-fit: cover;
-}
-
-.res-logo{
-    width: 100%;
-    border-radius: 15px;
-}
-
-.card-info >*{
-    padding: 5px 10px;
 }
 .buttons{
     display: flex;
@@ -143,19 +115,21 @@
 }
 
 .search-box{
-    width: 700px;
+    width: 600px;
     outline : none;
     height: 40px;
     padding: 5px 10px;
     font-size: 16px;
     font-weight: 500;
-    border: 1px solid black;
+    border: 1px solid transparent;
     background-color: #f0f0f0;
-    border-radius: 5px;
+    border-radius: 10px;
     
 }
 .search-box:focus{
     transform: scale(1.01);
+    border: 1px solid rgb(196, 52, 0);
+
 }
 .search-button{
     border: 0;
@@ -172,25 +146,173 @@
 }
 .search-button:active{
     transform: scale(0.97);
+    border: 1px solid rgb(196, 52, 0);
+
 }
 
+/*-------[CARDS]-------*/
+
+.rest-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+    gap: 20px;
+}
+
+.res-card{
+    margin: 5px;
+    padding: 10px;
+    width: 250px;
+    height: 270px;
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: all 0.1s;
+    color: black;
+    box-shadow: 5px 5px 5px 4px rgb(0.1, 0,1, 0.1);
+
+}
+
+.res-card:hover{
+    box-shadow: none;
+
+    transform: scale(1.06);
+    cursor: pointer;
+    /* background-color: #f0f0f0 ; */
+}
+
+.res-card >*{
+    padding: 7px 0;
+}
+.res-card img{
+    height: 150px;
+    object-fit: cover;
+}
+
+.res-logo{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.name-rating, .two-time{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.rating h4{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3px;
+}
+
+.card-info >*{
+    padding: 5px 10px;
+}
+
+/*-------[MENU ITEMS]-------*/
+
+.restaurant-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    max-height: 900px;
+    overflow-x: scroll;
+}
+
+.restaurant-menu>*{
+    padding: 10px 0;
+}
+
+.rest-name{
+    color: antiquewhite;
+    font-size: 35px;
+}
+
+.rest-details{
+    border: 1px solid white; 
+    padding: 20px 30px;
+    margin: 10px 0 ;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px 4px rgb(0.1, 0,1, 0.1);
+    background-color: cadetblue;
+    color: bisque;
+}
+.rest-details >*{
+    padding: 10px 0;
+}
+
+.rest-details h4{
+    margin: 0 20px;
+}
+#menu{
+    margin-left: -580px;
+    font-size: 30px;
+    margin-bottom: -10px;
+    color: rgb(89,47,21);
+}
+
+.menu-items{
+    height: 30vh;
+}
+
+.food-items{
+    display: flex;
+    align-items: center;
+    padding:  10px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 20px;
+    list-style: none;
+    width: 600px;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: blanchedalmond;
+}
+.food-items li{
+    margin-right: 10px;
+}
+.food-price{
+    color: cadetblue;
+    font-weight: 600;
+}
+
+.food-items:hover{
+    transform: scale(1.01);
+}
+
+.menu-items img{
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+
+
+/*-------[SHIMMER]-------*/
 
 .shimmer-cards{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 40px;
+    margin-top: 30px;
     gap: 20px;
-
 }
 
 .shimmer-card{
     margin: 5px;
     padding: 10px;
     width: 250px;
-    height: 365px;
-
+    height: 270px;
     background-color: #f0f0f0;
     border-radius: 10px;
 }
@@ -205,7 +327,7 @@
 .shimmer-filter, .shimmer-login{
     border: 0;
     outline: 0;
-    width: 215px;
+    width: 220px;
     margin: 20px;
     margin-bottom: -20px;
     background-color: #f0f0f0;
@@ -214,7 +336,8 @@
 }
 .shimmer-login{
     width: 150px;
-    padding: 22px 50px;
+    padding: 22px 47px;
+    margin-top: 10px;
 }
 
 .shimmer-card >*{
@@ -227,6 +350,46 @@
     background-color: #d8d8d8;
     margin: 8px 2px;
 }
+
+
+.shimmer-search{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.shimmer-search-box{
+    width: 600px;
+    outline : none;
+    border: none;
+    height: 40px;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.shimmer-search-button{
+    border: 0;
+    outline: 0;
+    background-color: #f0f0f0;
+    padding: 8px 10px;
+    border-radius: 10px;
+    width: 80px;
+    height: 35px;
+    margin-top: 30px;
+}
+.shimmer-first-line, .shimmer-second-line{
+    height: 2px;
+    border-radius: 3px;
+    width: 180px;
+    background-color: #d8d8d8;
+    margin: 10px 5px;
+}
+.shimmer-second-line{
+    width: 70px;
+}
+
 
 
 /*-------[ABOUT]-------*/

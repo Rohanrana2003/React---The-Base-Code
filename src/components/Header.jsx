@@ -6,9 +6,9 @@ const Header = () => {
         <div className='header'>
 
             <div className='logo-container'>
-                <img
-                    className='logo'
-                    src={LOGO_URL} alt="" />
+                <img className='logoImg' src="https://i.ibb.co/bds3n5B/LOGO.png" alt="LOGO" />
+               <h1 className='logo'>REACT-AURANT</h1>
+
             </div>
 
             <div className="nav-items">

@@ -83,8 +83,8 @@ React.createElelemnt creates a object , When the object is rendered to DOM it be
 
 # LifeCycle Methods
  ## Note: 
-  Never Compare **class lifecycle methods** with **useEffect**, it is reffered as a bad practice.
-  There is no **Lifecycle methods** in modern function based React.
+  - Never Compare **class lifecycle methods** with **useEffect**, it is reffered as a bad practice.
+  - There is no **Lifecycle methods** in modern function based React.
 
  ## 1.Mounting
 
