@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import { RESTAURANT_API } from "../utils/constants";
 
 
 const Body = () => {
@@ -14,10 +15,10 @@ const Body = () => {
  
 
    const fetchData = async() =>{
-    const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.7333148&lng=76.7794179&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING')
+    const data = await fetch(RESTAURANT_API)
     const json = await data.json();
     setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setListOfRestaurantsClone(json?.data?.cards[4   ]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setListOfRestaurantsClone(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
    }
 
    useEffect(()=>{
