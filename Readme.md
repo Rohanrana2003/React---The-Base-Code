@@ -83,41 +83,43 @@ React.createElelemnt creates a object , When the object is rendered to DOM it be
  - If dependency array is [btnNameReact] => UseEffect is called everytime btnNameReact is updated.
 
  # LifeCycle Methods
-  # Mounting
-  - Example 1:
+
+ ## Mounting
+
+  ### Example 1:
     How Mounting takes place in a class Component.
 
-      - Parent constructor called                  //Reconciliation OR Rneder Phase
-      - Parent render called                       //Reconciliation OR Rneder Phase
-      - Parent componentDidMount called            //DOM Manipulation OR Commit Phase
+      - Parent constructor called                  (_Reconciliation OR Render Phase_)
+      - Parent render called                       (_Reconciliation OR Render Phase_)
+      - Parent componentDidMount called            (_DOM Manipulation OR Commit Phase_)
       
-  - Example 2:
+  ### Example 2:
     How Mounting takes place in a parent class Component having child component.
 
-      - Parent constructor called                  //Reconciliation OR Rneder Phase
-      - Parent render called                       //Reconciliation OR Rneder Phase
+      - Parent constructor called                  (_Reconciliation OR Render Phase_)
+      - Parent render called                       (_Reconciliation OR Render Phase_)
 
-      - Child constructor called                   //Reconciliation OR Rneder Phase
-      - Child render called                        //Reconciliation OR Rneder Phase
+      - Child constructor called                   (_Reconciliation OR Render Phase_)
+      - Child render called                        (_Reconciliation OR Render Phase_)
 
-      - First child componentDidMout called        //DOM Manipulation OR Commit Phase
-      - Parent componentDidMount called            //DOM Manipulation OR Commit Phase
+      - First child componentDidMout called        (_DOM Manipulation OR Commit Phase_)
+      - Parent componentDidMount called            (_DOM Manipulation OR Commit Phase_)
 
-  - Example 3:
+  ### Example 3:
     How Mounting takes place in a parent class Component having two child component (first class, second class).
 
-      - Parent constructor called                  //Reconciliation OR Rneder Phase
-      - Parent render called                       //Reconciliation OR Rneder Phase
+      - Parent constructor called                  (_Reconciliation OR Render Phase_)
+      - Parent render called                       (_Reconciliation OR Render Phase_)
 
-      - First child constructor called             //Reconciliation OR Rneder Phase             
-      - First child render called                  //Reconciliation OR Rneder Phase
+      - First child constructor called             (_Reconciliation OR Render Phase_)             
+      - First child render called                  (_Reconciliation OR Render Phase_)
 
-      - Second child constructor called            //Reconciliation OR Rneder Phase
-      - Second child render called                 //Reconciliation OR Rneder Phase
+      - Second child constructor called            (_Reconciliation OR Render Phase_)
+      - Second child render called                 (_Reconciliation OR Render Phase_)
 
-      - First child componentDidMout called        //DOM Manipulation OR Commit Phase 
-      - Second child componentDidMount called      //DOM Manipulation OR Commit Phase
-      - Parent componentDidMount called            //DOM Manipulation OR Commit Phase
+      - First child componentDidMout called        (_DOM Manipulation OR Commit Phase_)
+      - Second child componentDidMount called      (_DOM Manipulation OR Commit Phase_)
+      - Parent componentDidMount called            (_DOM Manipulation OR Commit Phase_)
 
       React optimises the App by applying all the componentDidMount in a one Go or In Single Batch thats why they are executed or called at last.
  
