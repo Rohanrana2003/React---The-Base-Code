@@ -8,7 +8,6 @@ const User =({name})=>{
     return(
         <div className='user-info'> 
             <h1>Count1: {count1}</h1>
-            <h1>Count1: {count2}</h1>
 
 
             <h2>Name: {name}</h2>

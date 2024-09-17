@@ -67,59 +67,77 @@ React.createElelemnt creates a object , When the object is rendered to DOM it be
    - import {<Component>} from "<pathName>"
 
 # React Hooks
- (Normal JavaScript utility Function)
- - UseState()  "Gives us a variable with super powers"
- - UseEffect() "Runs after UI is rendered" 
+ (Normal JavaScript utility Function) 
 
-# Use State
- - Whenever State variable updates, react triggers a reconciliation cycle(re-renders the component).
- - It is used to create Local State variables inside our Functional Components.
- - They are meant to be created inside the function at the higher level.
- - They should not be created inside conditions or loops.
+ ## 1.UseState()  "Gives us a variable with super powers"
+    - Whenever State variable updates, react triggers a reconciliation cycle(re-renders the component).
+    - It is used to create Local State variables inside our Functional Components.
+    - They are meant to be created inside the function at the higher level.
+    - They should not be created inside conditions or loops.
 
-# Use Effect 
- - If there is no dependency array => UseEffect is called on every render.
- - If dependency array is empty [] => UseEffect is called on initial render(just once).
- - If dependency array is [btnNameReact] => UseEffect is called everytime btnNameReact is updated.
+ ## 2.UseEffect() "Runs after UI is rendered" 
+    - If there is no dependency array => UseEffect is called on every render.
+    - If dependency array is empty [] => UseEffect is called on initial render(just once).
+    - If dependency array is [btnNameReact] => UseEffect is called everytime btnNameReact is updated.
 
- # LifeCycle Methods
 
- ## Mounting
+# LifeCycle Methods
+ ## Note: 
+  Never Compare **class lifecycle methods** with **useEffect**, it is reffered as a bad practice.
+  There is no **Lifecycle methods** in modern function based React.
+
+ ## 1.Mounting
 
   ### Example 1:
     How Mounting takes place in a class Component.
 
-      - Parent constructor called                  (_Reconciliation OR Render Phase_)
-      - Parent render called                       (_Reconciliation OR Render Phase_)
-      - Parent componentDidMount called            (_DOM Manipulation OR Commit Phase_)
+      - Parent constructor called                    (_Reconciliation OR Render Phase_)
+      - Parent render called                         (_Reconciliation OR Render Phase_)
+      - Parent componentDidMount called              (_DOM Manipulation OR Commit Phase_)
       
   ### Example 2:
     How Mounting takes place in a parent class Component having child component.
 
-      - Parent constructor called                  (_Reconciliation OR Render Phase_)
-      - Parent render called                       (_Reconciliation OR Render Phase_)
+      - Parent constructor called                    (_Reconciliation OR Render Phase_)
+      - Parent render called                         (_Reconciliation OR Render Phase_)
 
-      - Child constructor called                   (_Reconciliation OR Render Phase_)
-      - Child render called                        (_Reconciliation OR Render Phase_)
+        - Child constructor called                   (_Reconciliation OR Render Phase_)
+        - Child render called                        (_Reconciliation OR Render Phase_)
+        - First child componentDidMout called        (_DOM Manipulation OR Commit Phase_)
 
-      - First child componentDidMout called        (_DOM Manipulation OR Commit Phase_)
-      - Parent componentDidMount called            (_DOM Manipulation OR Commit Phase_)
+      - Parent componentDidMount called              (_DOM Manipulation OR Commit Phase_)
 
   ### Example 3:
     How Mounting takes place in a parent class Component having two child component (first class, second class).
 
-      - Parent constructor called                  (_Reconciliation OR Render Phase_)
-      - Parent render called                       (_Reconciliation OR Render Phase_)
+      - Parent constructor called                    (_Reconciliation OR Render Phase_)
+      - Parent render called                         (_Reconciliation OR Render Phase_)
 
-      - First child constructor called             (_Reconciliation OR Render Phase_)             
-      - First child render called                  (_Reconciliation OR Render Phase_)
+        - First child constructor called             (_Reconciliation OR Render Phase_)             
+        - First child render called                  (_Reconciliation OR Render Phase_)
 
-      - Second child constructor called            (_Reconciliation OR Render Phase_)
-      - Second child render called                 (_Reconciliation OR Render Phase_)
+        - Second child constructor called            (_Reconciliation OR Render Phase_)
+        - Second child render called                 (_Reconciliation OR Render Phase_)
 
-      - First child componentDidMout called        (_DOM Manipulation OR Commit Phase_)
-      - Second child componentDidMount called      (_DOM Manipulation OR Commit Phase_)
-      - Parent componentDidMount called            (_DOM Manipulation OR Commit Phase_)
+        - First child componentDidMout called        (_DOM Manipulation OR Commit Phase_)
+        - Second child componentDidMount called      (_DOM Manipulation OR Commit Phase_)
+
+      - Parent componentDidMount called              (_DOM Manipulation OR Commit Phase_)
 
       React optimises the App by applying all the componentDidMount in a one Go or In Single Batch thats why they are executed or called at last.
- 
+
+
+ # 2.Updating
+
+  ### Example:
+   Suppose we have a Class based Component and after the completition of ***Mounting***. We are updating the data by an API call in ***componentDidUpdate*** and using ***setState***, When the ***setState***  occurs. Then again the data will re-render with new data and after the **ComponentDidUpdate** is called.
+
+    - Constructor Called
+    - Rendering Takes place
+    - componentDidMount called (this.setState called)
+    - Re rendering takes place with update data.
+    - componentDidUpdate taked place
+
+ # 3.Unmounting
+   - In Unmounting, if the component is removed from the screen such as we swithc between the pages, then the componentWillUnmount is called just before the unmounting of component from the DOM.
+   - ComponentWillUnmount is used to remove the resources which are in action from the DOM (setTimeout, eventListeners etc).

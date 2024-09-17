@@ -227,18 +227,36 @@
     background-color: #d8d8d8;
     margin: 8px 2px;
 }
+
+
+/*-------[ABOUT]-------*/
+
 .about{
-    padding: 20px;
+    padding: 40px;
 }
 
 .user-info{
     margin: 20px;
     padding: 10px;
-    border: 1px solid black;
-    width: fit-content;
+    border: 2px solid black;
+    width: 800px;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .user-info>*{
     padding: 5px;
+}
+
+.user-details h3{
+    padding: 10px 0;
+}
+
+.user-details span{
+    font-weight: 400;
+}
+
+.user-pic img{
+    width: 200px;
 }
