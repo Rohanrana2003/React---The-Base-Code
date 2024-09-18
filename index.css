@@ -423,3 +423,24 @@ a{
 .user-pic img{
     width: 200px;
 }
+
+/*-------[ONLINE STATUS]-------*/
+/* 
+.online-status{
+    position: relative;
+    height: 100%;
+} */
+
+.online-status{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.online-status span{
+    color: rgb(196, 52, 0);
+}
+

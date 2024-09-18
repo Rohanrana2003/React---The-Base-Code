@@ -141,3 +141,12 @@ React.createElelemnt creates a object , When the object is rendered to DOM it be
  # 3.Unmounting
    - In Unmounting, if the component is removed from the screen such as we swithc between the pages, then the componentWillUnmount is called just before the unmounting of component from the DOM.
    - ComponentWillUnmount is used to remove the resources which are in action from the DOM (setTimeout, eventListeners etc).
+
+# SPR (Single Responsibility Principle)
+ - It state that every single component in our Code should have only one responsibility to do.
+ - We should have to keep our component as light as possible.
+ - It makes our code:
+   - Clean
+   - Readable
+   - Testable
+   - Maintainable

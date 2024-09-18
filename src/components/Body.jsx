@@ -2,43 +2,45 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import { RESTAURANT_API } from "../utils/constants";
+import useOnlineStatus from "../utils/hooks/useOnlineStatus";
+import useListOfRestaurants from "../utils/hooks/useListOfRestaurants"
 
 
 const Body = () => {
-    const [listOfRestaurants, setListOfRestaurants] = useState([]);
     const [listOfRestaurantsClone, setListOfRestaurantsClone] = useState([]);
     const [filterValue, setFilterValue] = useState('Top Rated Restaurants')
     const [login, setLogin] = useState('Login');
     const [searchValue, setSearchValue] = useState('');
 
- 
+    const listOfRestaurants = useListOfRestaurants();
 
-   const fetchData = async() =>{
-    const data = await fetch(RESTAURANT_API)
-    const json = await data.json();
-    setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setListOfRestaurantsClone(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-   }
+    const onlineStatus = useOnlineStatus();
 
-   useEffect(()=>{
-    fetchData();
-   }, [])
-   
+    useEffect(() => {
+        setListOfRestaurantsClone(listOfRestaurants);
+    },[listOfRestaurants])
 
-   const filterRestaurants = () =>{
 
-        if(filterValue === 'Top Rated Restaurants'){
+    if (onlineStatus === false) {
+        return <div className="online-status">
+                    <h1>Looks like you don't have an active <span>Internet connection</span></h1>
+                </div>
+    }
+
+
+    const filterRestaurants = () => {
+
+        if (filterValue === 'Top Rated Restaurants') {
             setFilterValue('See all Restaurants');
-            setListOfRestaurantsClone(listOfRestaurants?.filter(rest=>rest.info.avgRating > 4.3));
+            setListOfRestaurantsClone(listOfRestaurants?.filter(rest => rest.info.avgRating > 4.3));
         }
-        else{
+        else {
             setFilterValue('Top Rated Restaurants');
             setListOfRestaurantsClone(listOfRestaurants);
         }
-   }
+    }
 
-   return listOfRestaurants && listOfRestaurants?.length == 0 ? <Shimmer/> : (
+    return listOfRestaurants && listOfRestaurants?.length == 0 ? <Shimmer /> : (
 
         <div className="body">
 
@@ -47,23 +49,23 @@ const Body = () => {
 
                 <div className="search">
 
-                    <input type="search"  onChange={(e)=>setSearchValue(e.target.value)}
-                        className="search-box" 
-                        value={searchValue} 
+                    <input type="search" onChange={(e) => setSearchValue(e.target.value)}
+                        className="search-box"
+                        value={searchValue}
                         placeholder="Search for restaurants and food" />
 
 
-                    <button className="search-button" onClick={()=>setListOfRestaurantsClone(listOfRestaurants.filter(rest=>rest.info.name.toLowerCase().includes(searchValue.toLowerCase())))}>Search</button>
-                    
-                </div> 
+                    <button className="search-button" onClick={() => setListOfRestaurantsClone(listOfRestaurants.filter(rest => rest.info.name.toLowerCase().includes(searchValue.toLowerCase())))}>Search</button>
 
-                <button className="login" onClick={()=>login === 'Login'? setLogin('Logout'):setLogin('Login')}>{login}</button>
+                </div>
+
+                <button className="login" onClick={() => login === 'Login' ? setLogin('Logout') : setLogin('Login')}>{login}</button>
             </div>
 
             <div className="rest-container">
                 {
-                    listOfRestaurants && listOfRestaurantsClone?.map((restaurant)=>(
-                        <Link key={restaurant.info.id} to={'/restaurant/' + restaurant.info.id}><RestaurantCard resData={restaurant} /></Link> 
+                    listOfRestaurantsClone && listOfRestaurantsClone?.map((restaurant) => (
+                        <Link key={restaurant.info.id} to={'/restaurant/' + restaurant.info.id}><RestaurantCard resData={restaurant} /></Link>
                     ))
                 }
             </div>

@@ -1,30 +1,26 @@
-import { useEffect, useState } from "react"
-import { MENU_API, MENU_IMG } from "../utils/constants";
+import { MENU_IMG } from "../utils/constants";
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
+import useRestaurantMenu from '../utils/hooks/useRestaurant';
+import useOnlineStatus from "../utils/hooks/useOnlineStatus";
 
 
 const RestaurantMenu = () => {
-    const [restInfo, setRestInfo] = useState(null)
-    const [menuData, setMenuData] = useState([]);
 
     const {resId} = useParams();
-
-    useEffect(() => {
-        fetchMenu();
-    }, [])
-
-    const fetchMenu = async () => {
-
-        const data = await fetch(MENU_API + resId)
-        const json = await data.json();
-        setRestInfo(json);
-        setMenuData(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards);
-    }
+    const restInfo = useRestaurantMenu(resId);
+    const onlineStatus = useOnlineStatus();
 
     if(restInfo === null ) return<Shimmer/>
 
-    const {name, cuisines, costForTwoMessage} = restInfo?.data?.cards[2]?.card?.card?.info;
+    const {name, cuisines, costForTwoMessage} = restInfo?.cards[2]?.card?.card?.info;
+    const {itemCards} = restInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+
+    if (onlineStatus === false) {
+        return <div className="online-status">
+                    <h1>Looks like you don't have an active <span>Internet connection</span></h1>
+                </div>
+    }
 
     return(
         <div className="restaurant-menu">
@@ -36,13 +32,12 @@ const RestaurantMenu = () => {
                 <h4>{costForTwoMessage}</h4>
 
             </div>
-           
             
             <h2 id="menu">Menu</h2>
 
             <div className="menu-items">
             {
-                menuData?.map((item)=>(
+                itemCards?.map((item)=>(
                     <div key={item.card?.info?.id} className="food-items">
 
                         <li >
@@ -50,9 +45,7 @@ const RestaurantMenu = () => {
                         </li>
 
                             <img src={MENU_IMG + item.card?.info?.imageId} alt="" />
-
                     </div>
-                    
                 ))
             }
             </div>
