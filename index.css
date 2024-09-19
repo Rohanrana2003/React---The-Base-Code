@@ -16,6 +16,7 @@ a{
     border-bottom: 2px solid rgb(196, 52, 0);
     margin: 0px 20px;
     height: 110px;
+    box-shadow: 0 10px 15px -3px rgb(0.1, 0,1, 0.1) ;
 }
 
 .body{
@@ -219,7 +220,7 @@ a{
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
-    max-height: 900px;
+    height: 80vh;
     overflow-x: scroll;
 }
 
@@ -255,29 +256,65 @@ a{
     color: rgb(89,47,21);
 }
 
-.menu-items{
-    height: 30vh;
+.categories{
+    width: 50%;
+    padding: 10px;
+
 }
+
+.category-all{
+    background-color: aliceblue;
+    border-radius: 10px;
+    margin: 20px 0px;
+    cursor: pointer;
+    /* width: 60vw; */
+    padding: 15px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 15px -3px rgb(0.1, 0,1, 0.1) ;
+}
+
+.category-title{
+    /* border-bottom: 7px solid rgb(224, 224, 224); */
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.category-title span{
+    font-weight: 600;
+    font-size: 20px;
+}
+
 
 .food-items{
     display: flex;
     align-items: center;
     padding:  10px;
-    padding-left: 20px;
+    padding-left: 10px;
     margin-bottom: 10px;
     font-weight: 500;
     font-size: 20px;
     list-style: none;
-    width: 600px;
+    width: 45vw;
     justify-content: space-between;
-    border: 1px solid black;
-    border-radius: 10px;
+    border-bottom: 1px solid black;
     cursor: pointer;
-    background-color: blanchedalmond;
 }
-.food-items li{
-    margin-right: 10px;
+
+.food-detail{
+    padding: 10px;
+    font-size: 20px;
 }
+
+.food-detail p{
+    padding-top: 5px;
+    font-size: 14px;
+}
+
 .food-price{
     color: cadetblue;
     font-weight: 600;
@@ -288,8 +325,8 @@ a{
 }
 
 .menu-items img{
-    width: 70px;
-    height: 70px;
+    width: 85px;
+    height: 85px;
     border-radius: 10px;
     object-fit: cover;
 }
@@ -425,11 +462,6 @@ a{
 }
 
 /*-------[ONLINE STATUS]-------*/
-/* 
-.online-status{
-    position: relative;
-    height: 100%;
-} */
 
 .online-status{
     position: absolute;
@@ -443,4 +475,6 @@ a{
 .online-status span{
     color: rgb(196, 52, 0);
 }
+
+/*-------[Menu Items]-------*/
 

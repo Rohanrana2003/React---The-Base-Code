@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import useRestaurantMenu from '../utils/hooks/useRestaurant';
 import useOnlineStatus from "../utils/hooks/useOnlineStatus";
+import RestaurantCategory from "./RestaurantCategory";
 
 
 const RestaurantMenu = () => {
@@ -14,7 +15,10 @@ const RestaurantMenu = () => {
     if(restInfo === null ) return<Shimmer/>
 
     const {name, cuisines, costForTwoMessage} = restInfo?.cards[2]?.card?.card?.info;
-    const {itemCards} = restInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+
+    const categories = restInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards.filter(
+        (c)=> c.card?.card?.['@type'] === 'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory')
+
 
     if (onlineStatus === false) {
         return <div className="online-status">
@@ -35,20 +39,14 @@ const RestaurantMenu = () => {
             
             <h2 id="menu">Menu</h2>
 
-            <div className="menu-items">
-            {
-                itemCards?.map((item)=>(
-                    <div key={item.card?.info?.id} className="food-items">
-
-                        <li >
-                            {item.card?.info?.name} <p className="food-price">{item.card?.info?.price ? " - RS."+item.card?.info?.price/100 : ""}</p>
-                        </li>
-
-                            <img src={MENU_IMG + item.card?.info?.imageId} alt="" />
-                    </div>
-                ))
-            }
+            
+            <div className="categories">
+                {categories.map((category)=> <RestaurantCategory key={category?.card?.card.title} data={category?.card?.card}/>)}
             </div>
+
+
+
+            
 
         </div>
     )
