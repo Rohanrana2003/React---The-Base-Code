@@ -150,3 +150,12 @@ React.createElelemnt creates a object , When the object is rendered to DOM it be
    - Readable
    - Testable
    - Maintainable
+
+
+# Rexdux Setup
+ - Install @reduxjs/toolkit and react-redux
+ - Create Redux store
+ - Connect the sotre with your app
+ - Create Slice inside your store
+ - Dispatch (action)
+ - Selector  
