@@ -150,6 +150,35 @@ a{
     border: 1px solid rgb(196, 52, 0);
 
 }
+/*-------[CART ITEMS]-------*/
+
+.cart{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    max-height: 500px;
+    overflow: scroll;
+    padding-bottom: 0;
+}
+
+.components{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+}
+.components .clear{
+    margin: 10px 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
 
 /*-------[CARDS]-------*/
 
@@ -178,15 +207,14 @@ a{
 
 .res-card:hover{
     box-shadow: none;
-
     transform: scale(1.06);
     cursor: pointer;
-    /* background-color: #f0f0f0 ; */
 }
 
 .res-card >*{
     padding: 7px 0;
 }
+
 .res-card img{
     height: 150px;
     object-fit: cover;
@@ -267,7 +295,6 @@ a{
     border-radius: 10px;
     margin: 20px 0px;
     cursor: pointer;
-    /* width: 60vw; */
     height: max-content;
     display: flex;
     flex-direction: column;
@@ -277,8 +304,6 @@ a{
 
 .category-title{
     padding: 15px;
-
-    /* border-bottom: 7px solid rgb(224, 224, 224); */
     height: 100%;
     width: 95%;
     display: flex;
@@ -308,7 +333,7 @@ a{
     width: 45vw;
     justify-content: space-between;
     border-bottom: 1px solid black;
-    cursor: pointer;
+    cursor: context-menu;
 }
 
 .food-detail{
@@ -338,9 +363,27 @@ a{
 
 .menu-items img{
     width: 85px;
-    height: 85px;
+    min-height: 85px;
     border-radius: 10px;
     object-fit: cover;
+    cursor: context-menu;
+}
+
+.food-img{
+    position: relative;
+}
+.food-img button{
+    position: absolute;
+    top: 70px;
+    left: 21px;
+    background: black;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    color: white;
+    padding: 3px 5px;
+    font-size: 13px;
+    border-radius: 5px;
 }
 
 
