@@ -7,14 +7,18 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Error from './components/Error'
 import RestaurantMenu from './components/RestaurantMenu';
+import UserContext from './utils/context/UserContext';
+import { useContext } from 'react';
 
 
 const AppLayout = () => {
     return (
+        <UserContext.Provider value={{loggedInUser:'rohan'}}>
         <>
             <Header />
             <Outlet />
         </>
+        </UserContext.Provider>
     )
 }
 

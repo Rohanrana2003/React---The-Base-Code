@@ -1,15 +1,16 @@
 import ItemList from "./ItemList";
-import { useState } from "react";
 
+const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
 
-const RestaurantCategory = ({ data }) => {
-    const [showItems, setShowItems] = useState(false)
+    const handleItems = () =>{
+        setShowIndex();
+    }
+
 
     return (
-
         <div className="category-all">
 
-            <div className="category-title" onClick={()=>setShowItems(!showItems)}>
+            <div className="category-title" onClick={handleItems}>
                 <span>{data.title}({data.itemCards.length})</span>
                 {showItems ? <span>⬇️</span>: <span>⬆️</span>}
             </div>

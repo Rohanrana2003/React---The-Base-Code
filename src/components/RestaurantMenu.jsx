@@ -1,13 +1,14 @@
-import { MENU_IMG } from "../utils/constants";
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
-import useRestaurantMenu from '../utils/hooks/useRestaurant';
-import useOnlineStatus from "../utils/hooks/useOnlineStatus";
+import useRestaurantMenu from '../utils/CustomHooks/useRestaurant';
+import useOnlineStatus from "../utils/CustomHooks/useOnlineStatus";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 
 
 const RestaurantMenu = () => {
 
+    const [showIndex, setShowIndex] = useState(0);
     const {resId} = useParams();
     const restInfo = useRestaurantMenu(resId);
     const onlineStatus = useOnlineStatus();
@@ -36,12 +37,19 @@ const RestaurantMenu = () => {
                 <h4>{costForTwoMessage}</h4>
 
             </div>
-            
+             
             <h2 id="menu">Menu</h2>
 
             
             <div className="categories">
-                {categories.map((category)=> <RestaurantCategory key={category?.card?.card.title} data={category?.card?.card}/>)}
+                {categories?.map((category, index)=> 
+                    <RestaurantCategory 
+                        key={category?.card?.card.title}
+                        data={category?.card?.card}
+                        showItems={index === showIndex? true:false}
+                        setShowIndex = {()=>setShowIndex(index)}
+                    />
+                )}
             </div>
 
 

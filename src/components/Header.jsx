@@ -1,7 +1,11 @@
-import {LOGO_URL} from '../utils/constants';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import UserContext from '../utils/context/UserContext';
+
 
 const Header = () => {
+    const {loggedInUser} = useContext(UserContext);
+
     return (
         <div className='header'>
 
@@ -17,6 +21,7 @@ const Header = () => {
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/contact">Contact Us</Link></li>
                     <li><Link to="/">Cart</Link></li>
+                    <li><Link to="/">{loggedInUser}</Link></li>
                 </ul>
             </div>
         </div>
