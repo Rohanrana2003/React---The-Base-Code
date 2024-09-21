@@ -41,7 +41,7 @@ const RestaurantMenu = () => {
             <h2 id="menu">Menu</h2>
 
             
-            <div className="categories">
+            <div className="categories" >
                 {categories?.map((category, index)=> 
                     <RestaurantCategory 
                         key={category?.card?.card.title}
@@ -51,10 +51,6 @@ const RestaurantMenu = () => {
                     />
                 )}
             </div>
-
-
-
-            
 
         </div>
     )

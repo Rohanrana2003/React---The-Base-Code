@@ -32,7 +32,7 @@ const Body = () => {
 
         if (filterValue === 'Top Rated Restaurants') {
             setFilterValue('See all Restaurants');
-            setListOfRestaurantsClone(listOfRestaurants?.filter(rest => rest.info.avgRating > 4.3));
+            setListOfRestaurantsClone(listOfRestaurants.filter(rest => rest.info.avgRating > 4.3));
         }
         else {
             setFilterValue('Top Rated Restaurants');
@@ -52,7 +52,9 @@ const Body = () => {
                     <input type="search" onChange={(e) => setSearchValue(e.target.value)}
                         className="search-box"
                         value={searchValue}
-                        placeholder="Search for restaurants and food" />
+                        placeholder="Search for restaurants and food"
+                        data-testid="searchInput"
+                         />
 
 
                     <button className="search-button" onClick={() => setListOfRestaurantsClone(listOfRestaurants.filter(rest => rest.info.name.toLowerCase().includes(searchValue.toLowerCase())))}>Search</button>

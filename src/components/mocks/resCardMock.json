@@ -1,0 +1,75 @@
+{
+    "info": {
+        "id": "786153",
+        "name": "Pizza Hut",
+        "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/7/18/a2d94cd9-ac91-40de-b003-0a88f76c7f00_786153.jpg",
+        "locality": "SCO459-460",
+        "areaName": "Sector 35",
+        "costForTwo": "₹350 for two",
+        "cuisines": [
+            "Pizzas"
+        ],
+        "avgRating": 4.1,
+        "parentId": "721",
+        "avgRatingString": "4.1",
+        "totalRatingsString": "365",
+        "sla": {
+            "deliveryTime": 28,
+            "lastMileTravel": 2.5,
+            "serviceability": "SERVICEABLE",
+            "slaString": "25-30 mins",
+            "lastMileTravelString": "2.5 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2024-09-21 23:00:00",
+            "opened": true
+        },
+        "badges": {},
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {},
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "ITEMS",
+            "subHeader": "AT ₹189"
+        },
+        "orderabilityCommunication": {
+            "title": {},
+            "subTitle": {},
+            "message": {},
+            "customIcon": {}
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {},
+        "externalRatings": {
+            "aggregatedRating": {
+                "rating": "--"
+            }
+        },
+        "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+    },
+    "analytics": {
+        "context": "seo-data-50732d79-0afa-4274-8047-af7cb454f88b"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/city/chandigarh/pizza-hut-sco459-460-sector-35-rest786153",
+        "text": "RESTAURANT_MENU",
+        "type": "WEBLINK"
+    },
+    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+}
