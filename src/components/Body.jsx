@@ -4,6 +4,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/CustomHooks/useOnlineStatus";
 import useListOfRestaurants from "../utils/CustomHooks/useListOfRestaurants"
+import Footer from "./Footer";
 
 
 const Body = () => {
@@ -69,6 +70,8 @@ const Body = () => {
                     ))
                 }
             </div>
+
+            <Footer/>
         </div>
     )
 }

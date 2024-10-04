@@ -4,6 +4,7 @@ import useRestaurantMenu from '../utils/CustomHooks/useRestaurant';
 import useOnlineStatus from "../utils/CustomHooks/useOnlineStatus";
 import RestaurantCategory from "./RestaurantCategory";
 import { useState } from "react";
+import Footer from "./Footer";
 
 
 const RestaurantMenu = () => {
@@ -52,6 +53,7 @@ const RestaurantMenu = () => {
                 )}
             </div>
 
+            <Footer/>
         </div>
     )
 }
