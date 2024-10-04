@@ -3,13 +3,11 @@ import Shimmer from "./Shimmer";
 import useRestaurantMenu from '../utils/CustomHooks/useRestaurant';
 import useOnlineStatus from "../utils/CustomHooks/useOnlineStatus";
 import RestaurantCategory from "./RestaurantCategory";
-import { useState } from "react";
 import Footer from "./Footer";
 
 
 const RestaurantMenu = () => {
 
-    const [showIndex, setShowIndex] = useState(0);
     const {resId} = useParams();
     const restInfo = useRestaurantMenu(resId);
     const onlineStatus = useOnlineStatus();
@@ -43,12 +41,10 @@ const RestaurantMenu = () => {
 
             
             <div className="categories" >
-                {categories?.map((category, index)=> 
+                {categories?.map((category)=> 
                     <RestaurantCategory 
                         key={category?.card?.card.title}
                         data={category?.card?.card}
-                        showItems={index === showIndex? true:false}
-                        setShowIndex = {()=>setShowIndex(index)}
                     />
                 )}
             </div>

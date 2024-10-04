@@ -10,7 +10,6 @@ import Footer from "./Footer";
 const Body = () => {
     const [listOfRestaurantsClone, setListOfRestaurantsClone] = useState([]);
     const [filterValue, setFilterValue] = useState('Top Rated Restaurants')
-    const [login, setLogin] = useState('Login');
     const [searchValue, setSearchValue] = useState('');
 
     const listOfRestaurants = useListOfRestaurants();
@@ -41,6 +40,11 @@ const Body = () => {
         }
     }
 
+    const handleSearch = (e) =>{
+        setSearchValue(e.target.value)
+        setListOfRestaurantsClone(listOfRestaurants.filter(rest => rest.info.name.toLowerCase().includes(e.target.value.toLowerCase())))
+    }
+
     return listOfRestaurants && listOfRestaurants?.length == 0 ? <Shimmer /> : (
 
         <div className="body">
@@ -50,16 +54,14 @@ const Body = () => {
                 <button className="filter-btn" onClick={filterRestaurants}> {filterValue} </button>
 
                 <div className="search">
-                    <input type="search" onChange={(e) => setSearchValue(e.target.value)}
+                    <input type="search" onChange={handleSearch}
                         className="search-box"
                         value={searchValue}
                         placeholder="Search for restaurants and food"
                         data-testid="searchInput"
                          />
-                    <button className="search-button" onClick={() => setListOfRestaurantsClone(listOfRestaurants.filter(rest => rest.info.name.toLowerCase().includes(searchValue.toLowerCase())))}>Search</button>
                 </div>
 
-                {/* <button className="login" onClick={() => login === 'Login' ? setLogin('Logout') : setLogin('Login')}>{login}</button> */}
 
             </div>
 
