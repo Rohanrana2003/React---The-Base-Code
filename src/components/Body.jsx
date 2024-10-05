@@ -45,7 +45,7 @@ const Body = () => {
         setListOfRestaurantsClone(listOfRestaurants.filter(rest => rest.info.name.toLowerCase().includes(e.target.value.toLowerCase())))
     }
 
-    return listOfRestaurants && listOfRestaurants?.length == 0 ? <Shimmer /> : (
+    return listOfRestaurants && listOfRestaurants?.length == 0 ? (<><Shimmer /> <Footer/></>) : (
 
         <div className="body">
 

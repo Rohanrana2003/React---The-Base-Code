@@ -37,9 +37,8 @@ const RestaurantMenu = () => {
 
             </div>
              
-            <h2 id="menu">Menu</h2>
-
-            
+            <div id='menu-container'><h2 id="menu">Menu</h2></div>
+ 
             <div className="categories" >
                 {categories?.map((category)=> 
                     <RestaurantCategory 

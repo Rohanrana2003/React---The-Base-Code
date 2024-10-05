@@ -1,12 +1,24 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import {useEffect, useRef} from 'react';
 
 
 const Header = () => {
     const cartItems = useSelector(store=>store.cart.items);
+    const error = useRef();
+
+    useEffect(() => {
+
+        setTimeout(() => {
+            error.current.style.display='none';
+        }, 4000);
+    }, [])
+    
 
     return (
         <div className='header'>
+
+            <p ref={error} className='temp'>Please Allow CORS activation extension!</p>
 
             <div className='logo-container'>
                 <img className='logoImg' src="https://i.ibb.co/bds3n5B/LOGO.png" alt="LOGO" />

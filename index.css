@@ -9,7 +9,21 @@
 a{
     text-decoration: none;
 }
+.temp{
+    color: red;
+    position: absolute;
+    padding:3px 5px;
+    border-radius:4px;
+    left: 50%;
+    top: 6px;
+    background-color: bisque;
+    font-size: x-large;
+    font-weight: bold;
+    transform: translateX(-50%);
+}
+
 .header{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -273,22 +287,24 @@ a{
 .rest-details >*{
     padding: 10px 0;
 }
-
 .rest-details h4{
     margin: 0 20px;
 }
+#menu-container{
+    position: relative;
+    margin: 20px 0;
+}
 #menu{
-    margin-left: -580px;
+    position: absolute;
+    margin-left: 50%;
+    transform: translateX(-50%);
     font-size: 30px;
-    margin-bottom: -10px;
     color: rgb(89,47,21);
 }
-
 .categories{
     width: 700px;
     padding: 10px;
 }
-
 .category-all{
     background-color: aliceblue;
     border-radius: 10px;
@@ -304,7 +320,7 @@ a{
 .category-title{
     padding: 15px;
     height: 100%;
-    width: 95%;
+    min-width: 95%;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
@@ -329,17 +345,19 @@ a{
     font-weight: 500;
     font-size: 20px;
     list-style: none;
-    width: 90%;
+    width: 80%;
     justify-content: space-between;
     border-bottom: 1px solid black;
     cursor: context-menu;
     position: relative;
 }
-
+.category-body{
+    width: 95%;
+}
 .food-detail{
     padding: 10px;
     font-size: 20px;
-    width: 100%;
+    min-width: 80%;
 }
 
 .food-detail p{
@@ -360,7 +378,8 @@ a{
     transform: scale(1.01);
 }
 .menu-items{
-    padding-left: 30px;
+    margin: 0 50px;
+    width: 100%;
 }
 .menu-items img{
     width: 85px;
@@ -392,6 +411,9 @@ a{
 
 /*-------[SHIMMER]-------*/
 
+.shimmer-container{
+    position: relative;
+}
 .shimmer-cards{
     display: flex;
     justify-content: center;
@@ -431,6 +453,13 @@ a{
     width: 150px;
     padding: 22px 47px;
     margin-top: 10px;
+}
+.wait{
+    position: absolute;
+    top: 20px;
+    margin: 0 auto;
+    width: 100vw;
+    text-align: center;
 }
 
 .shimmer-card >*{
@@ -717,15 +746,25 @@ a{
 
 @media (max-width: 656px) {
     .food-price{
-        right: 28px;
-        top: -10px;
+        left: 20px;
+        top: 0px;
     }  
+    #food-desc{
+        display: none;
+    }
+    .menu-items{
+        margin: 0 10px;
+    }
 }
 
-@media (max-width: 530px) {
+@media (max-width: 400px) {
     .food-price{
         top: 0px;
     }  
+    .menu-items{
+        margin: 0px;
+    }
+   
 }
 
 
