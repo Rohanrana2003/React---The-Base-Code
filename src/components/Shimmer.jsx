@@ -14,11 +14,7 @@ const Shimmer = () => {
 
                     <input type="search" className="shimmer-search-box" />
 
-                    <button className="shimmer-search-button" ></button>
-
                 </div>
-
-                <button className="shimmer-login"></button>
 
             </div>
 

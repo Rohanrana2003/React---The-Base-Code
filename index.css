@@ -439,7 +439,7 @@ a{
     margin: 0 20px;
 }
 
-.shimmer-filter, .shimmer-login{
+.shimmer-filter{
     border: 0;
     outline: 0;
     width: 220px;
@@ -449,11 +449,7 @@ a{
     padding: 20px 50px;
     border-radius: 20px;
 }
-.shimmer-login{
-    width: 150px;
-    padding: 22px 47px;
-    margin-top: 10px;
-}
+
 .wait{
     position: absolute;
     top: 20px;
@@ -489,18 +485,10 @@ a{
     background-color: #f0f0f0;
     border-radius: 10px;
     margin-top: 30px;
+    margin-right: 30px;
 }
 
-.shimmer-search-button{
-    border: 0;
-    outline: 0;
-    background-color: #f0f0f0;
-    padding: 8px 10px;
-    border-radius: 10px;
-    width: 80px;
-    height: 35px;
-    margin-top: 30px;
-}
+
 .shimmer-first-line, .shimmer-second-line{
     height: 2px;
     border-radius: 3px;
@@ -731,6 +719,15 @@ a{
         margin: 20px 20px;
         width: 90vw;
     }
+    .shimmer-buttons{
+        flex-direction: column;
+        margin: 20px 20px;
+        width: 90vw;
+    }
+    .shimmer-search{
+       width: 100%;
+    }
+
     .search{
         width: 100%;
     } 
